@@ -100,12 +100,13 @@ def pipeline_gg_search(mess,api_key,cse_id):
     tit_tokens = create_token(dict_search['title'])
     list_phrase = doc.split('\n')
     content_vote = major_vote(tit_tokens,list_phrase)
+    print_50_tokens(content_vote)
     return content_vote
 
 if __name__ == '__main__':
     api_key = os.getenv('GG_API')
     cse_id = os.getenv('CUSTOM_SEARCH_ID')
     
-    mess = 'học bách khoa tphcm thì chỗ ăn chỗ ở thế nào'
+    mess = 'quán cà phê gần bách khoa hcm'
 
     print(pipeline_gg_search(mess,api_key,cse_id))
